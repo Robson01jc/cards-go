@@ -11,6 +11,8 @@ import (
 
 // Create a new type of 'deck'
 // which is a slice of strings
+// 'deck' is an abstraction over a slice of strings.
+// It's essentially a slice of strings but now we can tie some additional functions to it.
 type deck []string
 
 func newDeck() deck {
@@ -35,6 +37,7 @@ func (d deck) print() {
 }
 
 func deal(d deck, handSize int) (deck, deck) {
+	// Selecting a range within a slice.
 	return d[:handSize], d[handSize:]
 }
 
